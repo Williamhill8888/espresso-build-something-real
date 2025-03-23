@@ -20,25 +20,24 @@ The goal of this project is to deploy and configure an Arbitrum Nitro Rollup nod
 
 ## 2. Navigate to the project directory
 
-```bash
 cd espresso-build-something-real
 
 
 ## 3.Create a .env file and set the required environment variables:
-```bash
+
 nano .env
 
 Example .env file:
-```bash
 WEBSOCKET_ARBITRUM_SEPOLIA_RPC_URL=wss://arbitrum-sepolia-rpc.publicnode.com
 VALIDATOR_PRIVATE_KEY=Your staker private key.
 BATCH_POSTER_PRIVATE_KEY=Your BATCH_POSTER private key
 
 ## 4.Start the Nitro Rollup node:
-```bash
+
 docker compose up -d
 
 # Configuration
+
 The main configuration file is located at config/full_node.json.
 
 Environment variables are used to manage sensitive data (e.g., private keys).
@@ -52,7 +51,7 @@ HTTP JSON-RPC: http://localhost:8547
 WebSocket JSON-RPC: ws://localhost:8549
 
 # Example: Get Chain ID
-```bash
+
 curl -X POST \
   -H "Content-Type: application/json" \
   --data '{"jsonrpc":"2.0","method":"eth_chainId","params":[],"id":1}' \
