@@ -1,17 +1,19 @@
-version: '2.2'
 services:
   nitro:
     image: ghcr.io/espressosystems/nitro-espresso-integration/nitro-node:integration
     container_name: nitro-node
+    user: root
     ports:
       - "8547:8547"
       - "8548:8548"
       - "8549:8549"
-    command: --conf.file /config/full_node.json
+    command: --dev --http.addr 0.0.0.0
     volumes:
       - ./config:/config
       - ./wasm:/home/user/wasm/
       - ./database:/home/user/.arbitrum
+    env_file:
+      - .env  # 加载 .env 文件
     depends_on:
       - validation_node
 

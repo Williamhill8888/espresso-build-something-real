@@ -4,4 +4,4 @@ tx-generator/node_modules/
 *.lock
 pnpm-lock.yaml
 package-lock.json
-yarn.lock
+yarn.lock.env
